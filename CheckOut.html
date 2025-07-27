@@ -18,17 +18,17 @@
   <div class="checkout-wrapper">
     <!-- Header -->
     
-<div class="header text-center position-relative">
+<div class="header text-center position-relative" style="    border-radius: 7px 7px 0px 0px;">
  <!-- <img src="logos/acps-logo.png" alt="nav-logo" class="nav-logo rounded-circle" style="height: 60px; width: 60px;margin-top: -50px !important;"> -->
 <img src="logos/acps-logo.png"
      alt="nav-logo"
      class="nav-logo rounded-circle"
-     style="height: 60px; width: 60px; margin-top: -50px !important; border: 2px solid white;">
+     style="height: 60px; width: 60px; margin-top: -45px !important; border: 2px solid white;">
 
   <br/>
   <span style="margin-top: -20px;">DESH MODEL ACADEMY</span>
   
-   <div class="time "> <i class="fas fa-clock me-1"></i>9:59</div>
+   <div class="time "> <i class="fas fa-hourglass-half me-1"></i></i>9:59</div>
 
    <div class="close-btn "><i class="fa-solid fa-circle-xmark"></i></div>
 </div>
@@ -39,7 +39,7 @@
 <div class="amount-box">
   <div class="amount-row">
     <h6 class="fw-bold mb-1">Total Amount</h6>
-    <h6 class="fw-bold  mb-1">2030.00 BDT</h6>
+    <h6 class="fw-bold  mb-1">2000.00 BDT</h6>
   </div>
   <div class="amount-row">
     <small class="fw-medium">Current Amount:</small>
@@ -47,7 +47,7 @@
   </div>
   <div class="amount-row">
     <small class="fw-medium">Service Charge:</small>
-    <small  class="text-danger fw-medium">30.00 BDT</small>
+    <small  class="text-danger fw-medium">0.00 BDT</small>
   </div>
 </div>
 
@@ -58,10 +58,10 @@
         <div><img src="logos/Nogod-logo.png" class="payment-option"></div>
         <div><img src="logos/Rocket-logo.png" class="payment-option"></div>
         <div><img src="logos/Upae-logo.png" class="payment-option"></div>
-        <div><img src="logos/T-Cash logo.jpg" class="payment-option"></div>
+        <div><img src="logos/T-Cashlogo.jpg" class="payment-option"></div>
         <div><img src="logos/Surecash-logo.png" class="payment-option"></div>
-        <div><img src="logos/T-Cash logo.jpg" class="payment-option"></div>
-        <div><img src="logos/T-Cash logo.jpg" class="payment-option"></div>
+        <div><img src="logos/T-Cashlogo.jpg" class="payment-option"></div>
+        <div><img src="logos/T-Cashlogo.jpg" class="payment-option"></div>
       </div>
 
       <!-- Card Payment -->
@@ -88,18 +88,79 @@
       <!-- Others -->
       <div class="section-title">Others</div>
       <div class="option-grid">
-        <div><img src="logos/SSL-Commerze- logo.png" class="payment-option"></div>
+        <div><img src="logos/SSL-Commerze-logo.png" class="payment-option"></div>
       </div>
     </div>
 
     <!-- Footer -->
-    <div class="pay-now">
+    <!-- <div class="pay-now">
       <i class="fas fa-hand-pointer"></i> PAY NOW
-    </div>
+    </div> -->
+    <div class="pay-now disabled" id="payNowButton" disabled style="    border-radius: 0px 0px 7px 7px;">
+  <i class="fas fa-hand-pointer"></i> PAY NOW
+</div>
   </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const payNowButton = document.getElementById("payNowButton");
+    const paymentOptions = document.querySelectorAll(".payment-option");
+    const serviceChargeElement = document.querySelector(".text-danger.fw-medium");
+    const totalAmountElement = document.querySelector(".fw-bold.mb-1:last-of-type");
+    const currentAmountElement = document.querySelector(".fw-medium:last-of-type");
 
+    // Default values
+    let currentAmount = 2000.00;
+    let serviceCharge = 0.00;
+
+    // Service charge mapping for each payment option
+    const serviceChargeMapping = {
+      "Bkash-logo.jpg": 30.00,
+      "Nogod-logo.png": 20.00,
+      "Rocket-logo.png": 25.00,
+      "Upae-logo.png": 15.00,
+      "T-Cashlogo.jpg": 10.00,
+      "Surecash-logo.png": 5.00,
+      "Visa-logo.jpg": 9.00,
+      "Master-Card-logo.png": 8.00,
+      "DBBL-logo.png": 5.00,
+      "Shimanto-Bank-logo.png": 2.00,
+      "City-Bank-logo.jpg": 2.00,
+      "South-East-Bank-logo.png": 9.00,
+      "Tap-N-Pay-logo.jpeg": 9.00,
+      "Midland-Bank-logo.png": 2.00,
+      "FSIB-Islami-Bank-logo.png": 32.00,
+      "acps-logo.png": 78.00,
+      "nav-logo.png": 5.00,
+      "SSL-Commerze-logo.png": 50.00
+    };
+
+    paymentOptions.forEach(option => {
+      option.addEventListener("click", function () {
+        // Remove red border from all payment options
+        paymentOptions.forEach(opt => opt.parentElement.classList.remove("payment-option-selected"));
+
+        // Add red border to the clicked payment option
+        this.parentElement.classList.add("payment-option-selected");
+
+        // Enable the button
+        payNowButton.classList.remove("disabled");
+        payNowButton.removeAttribute("disabled");
+
+        // Get the service charge for the clicked option
+        const imageSrc = this.src.split("/").pop(); // Extract the image file name
+        serviceCharge = serviceChargeMapping[imageSrc] || 0.00;
+
+        const newTotalAmount = currentAmount + serviceCharge;
+
+        // Update the DOM elements
+        serviceChargeElement.textContent = `${serviceCharge.toFixed(2)} BDT`;
+        totalAmountElement.textContent = `${newTotalAmount.toFixed(2)} BDT`;
+      });
+    });
+  });
+</script>
 </body>
 </html>
