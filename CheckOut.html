@@ -1,123 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="Style.css">
 
-  
+
 </head>
+
 <body>
 
   <div class="checkout-wrapper">
     <!-- Header -->
-    
-<div class="header text-center position-relative" style="    border-radius: 7px 7px 0px 0px;">
- <!-- <img src="logos/acps-logo.png" alt="nav-logo" class="nav-logo rounded-circle" style="height: 60px; width: 60px;margin-top: -50px !important;"> -->
-<img src="logos/acps-logo.png"
-     alt="nav-logo"
-     class="nav-logo rounded-circle"
-     style="height: 60px; width: 60px; margin-top: -45px !important; border: 2px solid white;">
 
-  <br/>
-  <span style="margin-top: -20px;" class="fs-6  fs-sm-5 fs-md-4 fs-lg-3 fs-xl-2 fs-xxl-1">DESH MODEL ACADEMY</span>
+    <div class="header text-center position-relative" style="    border-radius: 7px 7px 0px 0px;">
+      <!-- <img src="logos/acps-logo.png" alt="nav-logo" class="nav-logo rounded-circle" style="height: 60px; width: 60px;margin-top: -50px !important;"> -->
+      <img src="logos/acps-logo.png" alt="nav-logo" class="nav-logo rounded-circle"
+        style="height: 60px; width: 60px; margin-top: -45px !important; border: 2px solid white;">
 
-  
-   <div class="time "> <i class="fas fa-hourglass-half me-1"></i></i>9:59</div>
+      <br />
+      <span style="margin-top: -20px;" class="fs-6  fs-sm-5 fs-md-4 fs-lg-3 fs-xl-2 fs-xxl-1">DESH MODEL ACADEMY</span>
 
-   <div class="close-btn "><i class="fa-solid fa-circle-xmark"></i></div>
-</div>
+
+      <div class="time "> <i class="fas fa-hourglass-half me-1"></i></i>9:59</div>
+
+      <div class="close-btn "><i class="fa-solid fa-circle-xmark"></i></div>
+    </div>
 
     <!-- Content -->
     <div class="content">
-     
-<div class="amount-box">
-  <div class="amount-row">
-    <h6 class="fw-bold mb-1">Total Amount</h6>
-    <h6 class="fw-bold  mb-1">2000.00 BDT</h6>
-  </div>
-  <div class="amount-row">
-    <small class="fw-medium">Current Amount:</small>
-    <small class="fw-medium">2000.00 BDT</small>
-  </div>
-  <div class="amount-row">
-    <small class="fw-medium">Service Charge:</small>
-    <small  class="text-danger fw-medium">0.00 BDT</small>
-  </div>
-</div>
+
+      <div class="amount-box">
+        <div class="amount-row">
+          <h6 class="fw-bold mb-1">Total Amount</h6>
+          <h6 class="fw-bold  mb-1">2000.00 BDT</h6>
+        </div>
+        <div class="amount-row">
+          <small class="fw-medium">Current Amount:</small>
+          <small class="fw-medium">2000.00 BDT</small>
+        </div>
+        <div class="amount-row">
+          <small class="fw-medium">Service Charge:</small>
+          <small class="text-danger fw-medium">0.00 BDT</small>
+        </div>
+      </div>
 
       <!-- Mobile Banking -->
-      <div class="section-title">Mobile Banking</div>
-      <div class="option-grid" >
-        <div><img src="logos/Bkash-logo.jpg" class="payment-option"></div>
-        <div><img src="logos/Nogod-logo.png" class="payment-option"></div>
-        <div><img src="logos/Rocket-logo.png" class="payment-option"></div>
-        <div><img src="logos/Upae-logo.png" class="payment-option"></div>
-        <div><img src="logos/T-Cashlogo.jpg" class="payment-option"></div>
-        <div><img src="logos/Surecash-logo.png" class="payment-option"></div>
-        <div><img src="logos/T-Cashlogo.jpg" class="payment-option"></div>
-        <div><img src="logos/T-Cashlogo.jpg" class="payment-option"></div>
+      
+
+<div class="mobile-banking-box d-flex align-items-center">
+        <div class="banking-label text-success fw-semibold pe-3">Mobile<br>Banking</div>
+        <div class="vr"></div>
+        <div class="option-grid">
+          <div><img src="logos/Bkash-logo.jpg" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/Rocket-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/Nogod-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/Upae-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/T-Cashlogo.jpg" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/Surecash-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/T-Cashlogo.jpg" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/T-Cashlogo.jpg" class="payment-option" id="afterClick"></div>
+        </div>
       </div>
 
-      <!-- Card Payment -->
-      <div class="section-title">Card Payment</div>
-      <div class="option-grid">
-        <div><img src="logos/Visa-logo.jpg" class="payment-option"></div>
-        <div><img src="logos/Master-Card-logo.png" class="payment-option"></div>
-        <div><img src="logos/DBBL-logo.png" class="payment-option"></div>
+  <!-- Card Payment -->
+      <div class="mobile-banking-box d-flex align-items-center">
+        <div class="banking-label text-success fw-semibold" style="padding-right: 0.80rem !important;">Card<br>Payment</div>
+        <div class="vr"></div>
+        <div class="option-grid">
+           <div><img src="logos/Visa-logo.jpg" class="payment-option" id="afterClick" style="min-width: 50px !important; margin-right: 90px !important;"></div>
+          <div><img src="logos/Master-Card-logo.png" class="payment-option" id="afterClick" style="min-width: 50px !important; margin-right: 90px !important;"></div>
+          <div><img src="logos/DBBL-logo.png" class="payment-option" id="afterClick" style="min-width: 50px !important; margin-right: 90px !important;"></div>
+        </div>
       </div>
-
       <!-- Internet Banking -->
-      <div class="section-title">Internet Banking <span style="font-weight: 500; font-size: 9px;">(Bank Transfer)</span>
+
+      <div class="mobile-banking-box d-flex align-items-center">
+        <div class="banking-label text-success fw-semibold pe-1">Internet<br>Banking <br><span
+            style="font-weight: 500; font-size: 9px;">(Bank Transfer)</span></div>
+         <div class="vr"></div>
+        <div class="option-grid">
+          <div><img src="logos/Shimanto-Bank-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/City-Bank-logo.jpg" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/South-East-Bank-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/Tap-N-Pay-logo.jpeg" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/Midland-Bank-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/FSIB-Islami-Bank-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/acps-logo.png" class="payment-option" id="afterClick"></div>
+          <div><img src="logos/nav-logo.png" class="payment-option" id="afterClick"></div>
+        </div>
+      </div>
+     
+ <div class="mobile-banking-box d-flex align-items-center">
+        <div class="banking-label text-success fw-semibold" style="padding-right: 1.90rem !important;">Other</div>
+         <div class="vr"></div>
+        <div class="option-grid">
+          <div style="min-width: 50px;">
+ <img src="logos/SSL-Commerze-logo.png" class="payment-option" >
+
 </div>
-      <div class="option-grid">
-        <div><img src="logos/Shimanto-Bank-logo.png" class="payment-option"></div>
-        <div><img src="logos/City-Bank-logo.jpg" class="payment-option"></div>
-        <div><img src="logos/South-East-Bank-logo.png" class="payment-option"></div>
-        <div><img src="logos/Tap-N-Pay-logo.jpeg" class="payment-option"></div>
-        <div><img src="logos/Midland-Bank-logo.png" class="payment-option"></div>
-        <div><img src="logos/FSIB-Islami-Bank-logo.png" class="payment-option"></div>
-        <div><img src="logos/acps-logo.png" class="payment-option"></div>
-        <div><img src="logos/nav-logo.png" class="payment-option"></div>
+
+          
+        </div>
       </div>
 
-      <!-- Others -->
-      <div class="section-title">Others</div>
-      <div class="option-grid">
-        <div><img src="logos/SSL-Commerze-logo.png" class="payment-option"></div>
-      </div>
     </div>
 
     <!-- Footer -->
     <!-- <div class="pay-now">
       <i class="fas fa-hand-pointer"></i> PAY NOW
     </div> -->
-    <div class="pay-now disabled" id="payNowButton" disabled style="    border-radius: 0px 0px 7px 7px;">
-  <i class="fas fa-hand-pointer"></i> PAY NOW
-</div>
+    <!-- <button style=" all: unset;">
+<div class="pay-now disabled" id="payNowButton" disabled style="    border-radius: 0px 0px 7px 7px;">
+      <i class="fas fa-hand-pointer"></i> PAY NOW
+    </div>
+    </button> -->
+    <button style="all: unset;" id="payNowButtonWrapper">
+  <div class="pay-now disabled" id="payNowButton" disabled style="border-radius: 0px 0px 7px 7px;">
+    <i class="fas fa-hand-pointer" id="payNowIcon"></i> 
+    <span >PAY NOW</span>
+    <span id="spinner" class="spinner-border spinner-border-sm text-primary" role="status" style="display: none; margin-left: 8px;"></span>
+  </div>
+</button>
   </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
+  <script>
   document.addEventListener("DOMContentLoaded", function () {
     const payNowButton = document.getElementById("payNowButton");
-    const paymentOptions = document.querySelectorAll(".payment-option");
     const serviceChargeElement = document.querySelector(".text-danger.fw-medium");
     const totalAmountElement = document.querySelector(".fw-bold.mb-1:last-of-type");
     const currentAmountElement = document.querySelector(".fw-medium:last-of-type");
+
+    const paymentOptions = document.querySelectorAll(".payment-option");
 
     // Default values
     let currentAmount = 2000.00;
     let serviceCharge = 0.00;
 
-    // Service charge mapping for each payment option
+    // Service charge mapping
     const serviceChargeMapping = {
       "Bkash-logo.jpg": 30.00,
       "Nogod-logo.png": 20.00,
@@ -141,29 +170,73 @@
 
     paymentOptions.forEach(option => {
       option.addEventListener("click", function () {
-        // Remove red border from all payment options
-        paymentOptions.forEach(opt => opt.parentElement.classList.remove("payment-option-selected"));
+        // Remove red border from all
+        paymentOptions.forEach(opt => {
+          const parent = opt.closest("div");
+          parent.classList.remove("payment-option-selected");
+        });
 
-        // Add red border to the clicked payment option
-        this.parentElement.classList.add("payment-option-selected");
+        // Add red border to the clicked image's parent div
+        const parentDiv = this.closest("div");
+        parentDiv.classList.add("payment-option-selected");
 
-        // Enable the button
+        // Enable PAY NOW button
         payNowButton.classList.remove("disabled");
         payNowButton.removeAttribute("disabled");
 
-        // Get the service charge for the clicked option
-        const imageSrc = this.src.split("/").pop(); // Extract the image file name
+        // Get file name of image clicked
+        const imageSrc = this.src.split("/").pop();
         serviceCharge = serviceChargeMapping[imageSrc] || 0.00;
-
         const newTotalAmount = currentAmount + serviceCharge;
 
-        // Update the DOM elements
+        // Update amounts
         serviceChargeElement.textContent = `${serviceCharge.toFixed(2)} BDT`;
         totalAmountElement.textContent = `${newTotalAmount.toFixed(2)} BDT`;
       });
     });
   });
-</script>
-<script src="script.js"></script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const payNowButton = document.getElementById("payNowButton");
+    const spinner = document.getElementById("spinner");
+    const payNowIcon = document.getElementById("payNowIcon");
+    const payNowText = payNowButton.querySelector("span:first-of-type"); // Select the PAY NOW text span
+
+    payNowButton.addEventListener("click", function () {
+      if (payNowButton.classList.contains("disabled")) {
+        return; // Prevent action if the button is disabled
+      }
+
+      // Disable the button and hide the "PAY NOW" text and icon
+      payNowButton.classList.add("disabled");
+      payNowIcon.style.display = "none";
+      payNowText.style.display = "none"; // Hide the PAY NOW text
+
+      // Show spinner with text-primary color
+      spinner.style.display = "inline-block";
+      spinner.classList.add("text-primary");
+
+      // Simulate callback event (e.g., API call)
+      setTimeout(() => {
+        // Change spinner color to green
+        spinner.classList.remove("text-primary");
+        spinner.classList.add("text-success");
+
+        // Enable the button and show "PAY NOW" text and icon
+        payNowButton.classList.remove("disabled");
+        payNowIcon.style.display = "inline-block";
+        payNowText.style.display = "inline-block"; // Show the PAY NOW text
+
+        // Hide spinner after callback is completed
+        spinner.style.display = "none";
+
+        // Perform your callback logic here
+        alert("Payment processed successfully!");
+      }, 3000); // Simulate a 3-second delay for the callback
+    });
+  });
+  </script>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -96,9 +96,9 @@ body {
 .payment-option {
   background-color: #f8fff8;
   border: 1px solid #d0e6d0;
-  padding: 4px;
+  padding: 1px;
   border-radius: 10px;
-  height: 50px;
+  height: 35px;
   object-fit: contain;
   width: 100%;
 }
@@ -113,15 +113,18 @@ body {
 .option-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
   background-color: #d4f5d4;
-  padding: 7px 7px 7px 10px;
+  padding: 0px 0px 0px 10px;
   border-radius: 10px;
 }
 
 .option-grid>div {
   width: 22%;
+  min-height: auto;
 }
+
+
 
 .pay-now {
   background: linear-gradient(to bottom, #05b52e, #045c18);
@@ -147,7 +150,24 @@ body {
 
 /* Scrollbar hidden for clean UI */
 .content::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
+}
+.content::-webkit-scrollbar {
+  width: 3px; /* Slim scrollbar width */
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px; 
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #ab07c0de;
+  border-radius: 20px; 
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #07bb04de; 
 }
 
 @media (max-height: 600px) {
@@ -179,4 +199,28 @@ body {
   /* Red shadow */
   border-radius: 10px;
   /* Optional: match original */
+}
+.mobile-banking-box {
+  background-color: #d4f5d4;
+  border-radius: 10px;
+  padding: 12px 10px;
+  margin-top: 15px;
+  display: flex;
+   align-items: center;
+}
+
+.banking-label {
+  writing-mode: horizontal-tb;
+  text-align: left;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #066f1f;
+   line-height: 1.2;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  background-color: #66c266;
+  margin-top: 2px;
 }
