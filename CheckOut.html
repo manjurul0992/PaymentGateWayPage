@@ -98,9 +98,16 @@
     <!-- <div class="pay-now">
       <i class="fas fa-hand-pointer"></i> PAY NOW
     </div> -->
-    <div class="pay-now disabled" id="payNowButton" disabled style="    border-radius: 0px 0px 7px 7px;">
+    <!-- <div class="pay-now disabled" id="payNowButton" disabled style="    border-radius: 0px 0px 7px 7px;">
   <i class="fas fa-hand-pointer"></i> PAY NOW
-</div>
+</div> -->
+ <button style="all: unset;" id="payNowButtonWrapper">
+  <div class="pay-now disabled" id="payNowButton" disabled style="border-radius: 0px 0px 7px 7px;">
+    <i class="fas fa-hand-pointer" id="payNowIcon"></i> 
+    <span >PAY NOW</span>
+    <span id="spinner" class="spinner-border spinner-border-sm text-primary" role="status" style="display: none; margin-left: 8px;"></span>
+  </div>
+</button>
   </div>
 
   <!-- Bootstrap JS -->
@@ -163,7 +170,46 @@
       });
     });
   });
-</script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const payNowButton = document.getElementById("payNowButton");
+    const spinner = document.getElementById("spinner");
+    const payNowIcon = document.getElementById("payNowIcon");
+    const payNowText = payNowButton.querySelector("span:first-of-type"); // Select the PAY NOW text span
+
+    payNowButton.addEventListener("click", function () {
+      if (payNowButton.classList.contains("disabled")) {
+        return; // Prevent action if the button is disabled
+      }
+
+      // Disable the button and hide the "PAY NOW" text and icon
+      payNowButton.classList.add("disabled");
+      payNowIcon.style.display = "none";
+      payNowText.style.display = "none"; // Hide the PAY NOW text
+
+      // Show spinner with text-primary color
+      spinner.style.display = "inline-block";
+      spinner.classList.add("text-primary");
+
+      // Simulate callback event (e.g., API call)
+      setTimeout(() => {
+        // Change spinner color to green
+        spinner.classList.remove("text-primary");
+        spinner.classList.add("text-success");
+
+        // Enable the button and show "PAY NOW" text and icon
+        payNowButton.classList.remove("disabled");
+        payNowIcon.style.display = "inline-block";
+        payNowText.style.display = "inline-block"; // Show the PAY NOW text
+
+        // Hide spinner after callback is completed
+        spinner.style.display = "none";
+
+        // Perform your callback logic here
+        alert("Payment processed successfully!");
+      }, 3000); // Simulate a 3-second delay for the callback
+    });
+  });
+  </script>
 <script src="script.js"></script>
 </body>
 </html>
